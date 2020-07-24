@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>n
+	<title>DEMO IVS</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/noui/nouislider.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+<link href="https://vjs.zencdn.net/7.8.3/video-js.css" rel="stylesheet" />
+
+  <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
+  <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+</head>
+<body>
+
+
+	<div class="container-contact100">
+		<div class="wrap-contact100">
+			<form class="contact100-form validate-form" id="form" method="post">
+				<span class="contact100-form-title">
+					<img src="images/Darede_Logo.png" style="max-width: 60%" alt="CloudBeer Logo">
+					<br>
+					DemoIVS
+				</span>
+				<div class="container-contact100-form-btn">
+					<video-js id="video-player" width="640" height="400" playsinline class="video-js" controls=controls" preload="auto" style="align-items: center;" poster="images/Videothumb.png" data-setup="{}">
+					<source src="https://**************.us-east-1.playback.live-video.net/api/video/v1/us-east-1.*************.channel.************.m3u8" type="application/x-mpegURL">
+				    <p class="vjs-no-js">
+				      To view this video please enable JavaScript, and consider upgrading to a
+				      web browser that
+				      <a href="https://videojs.com/html5-video-support/" target="_blank"
+				        >supports HTML5 video</a
+				      >
+				    </p>
+				    </video-js>
+				</div>
+				
+		</div>
+	</div>
+<script src="video.js"></script>
+<script src="videojs-http-streaming.min.js"></script>
+<script>
+var player = videojs("video-player");
+player.play();
+</script>
+<script src="https://player.live-video.net/******/amazon-ivs-player.min.js"></script>
+<script src="https://vjs.zencdn.net/7.8.3/video.js"></script>
+<script>
+  if (IVSPlayer.isPlayerSupported) {
+    const player = IVSPlayer.create();
+    const playback_url = 'https://*************.us-east-1.playback.live-video.net/api/video/v1/us-east-1.*************.channel.***********.m3u8'
+    player.attachHTMLVideoElement(document.getElementById('video-player'));
+    player.load(playback_url );
+    player.play();
+  }
+</script>
+
+</body>
+</html>
